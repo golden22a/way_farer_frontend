@@ -9,6 +9,9 @@ import {
 import Login from './component/Login';
 import Connect from './auth/connect';
 import Nav from './component/Nav';
+import CitiesList from './component/CitiesList';
+
+
 class App extends Component {
   constructor(props){
     super(props);
@@ -54,7 +57,7 @@ class App extends Component {
         <Route path="/login" render={(props) => <Login {...props} login={this.login} connected={this.state.connected}/>} />
 
       </Switch>
-
+      <CitiesList />
       </div>
       </div>
     );
