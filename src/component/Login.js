@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Row, Input,Button,Icon,Col} from 'react-materialize'
-import Navbar from '../Nav';
 import User from '../models/User';
 class Login extends Component {
   constructor(){
@@ -14,20 +13,12 @@ class Login extends Component {
     this.setEmail=this.setEmail.bind(this);
   }
   onLogin(){
-<<<<<<< HEAD
     let user = this.state;
   User.login(user).then( (res) => {
     this.props.login(res.data.token,res.data.user);
   }).catch( (err) => {
     console.log(err);
   });
-=======
-    let user =this.state;
-
-    console.log(user);
-    var s=User.login(user);
-    console.log(s);
->>>>>>> 3b42cb2486103cb47f316140066692820595dac1
   }
   setEmail (ev){
     this.setState({
@@ -45,8 +36,7 @@ class Login extends Component {
   render() {
 
     return (
-      <div>
-      <Navbar />
+
       <Row>
 
       <Input type="email" label="Email" s={12} vale={this.state.email} onChange={this.setEmail} />
@@ -55,7 +45,7 @@ class Login extends Component {
       <Button waves='light' onClick={this.onLogin}>Login<Icon left>send</Icon></Button>
       </Col>
       </Row>
-      </div>
+    
     );
   }
 }

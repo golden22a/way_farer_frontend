@@ -7,7 +7,8 @@ import {
     Switch
 } from 'react-router-dom';
 import Login from './component/Login';
-import Connect from './auth/connect'
+import Connect from './auth/connect';
+import Nav from './component/Nav';
 class App extends Component {
   constructor(){
     super()
@@ -40,8 +41,11 @@ class App extends Component {
   render() {
     let logged = !this.state.connected ? < Login  login={this.login}/> : null ;
     return (
+      <div className='main'>
+      <Nav connected={this.state.connected} user={this.state.user}/>
       <div className="container">
       {logged}
+      </div>
       </div>
     );
   }
