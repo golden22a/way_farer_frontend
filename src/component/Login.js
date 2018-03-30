@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Row, Input,Button,Icon,Col} from 'react-materialize'
 import {Navbar, NavItem} from 'react-materialize'
 import User from '../models/User';
-import nav from './nav';
+import nav from '../nav';
 class Login extends Component {
   constructor(){
     super();
@@ -38,7 +38,7 @@ class Login extends Component {
 
     return (
       <Row>
-
+    <nav />
     <Input type="email" label="Email" s={12} vale={this.state.email} onChange={this.setEmail} />
     <Input type="password" label="password" s={12} vale={this.state.password} onChange={this.setPassword}/>
     <Col s={12} offset='s5' >
