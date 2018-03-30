@@ -7,22 +7,46 @@ import {
     Switch
 } from 'react-router-dom';
 import Login from './component/Login';
+import Connect from './auth/connect';
+import Nav from './component/Nav';
+import Home from './component/Home';
 class App extends Component {
   constructor(){
     super()
     this.state={
-      token:''
+      connect:false,
+      user:{}
     }
     this.login=this.login.bind(this);
   }
-  login(email,password){
-    console.log(email);
-    console.log(email);
+  componentWillMount(){
+    let token=localStorage.getItem('token');
+    Connect.islogged(token).then((res)=>{
+      this.setState({
+        connected:true,
+        user:res.data.user
+      })
+    }).catch( (err) => {
+      console.log(err);
+    })
+  }
+  login(token,user){
+    this.setState({
+      connected:true,
+      user:user
+    });
+    localStorage.setItem('token', token);
+    console.log(this.state.token);
+
   }
   render() {
+    let logged = !this.state.connected ? < Login  login={this.login}/> : null ;
     return (
+      <div className='main'>
+      <Nav connected={this.state.connected} user={this.state.user}/>
       <div className="container">
-      <Login login={this.login}/>
+      {logged}
+      </div>
       </div>
     );
   }
