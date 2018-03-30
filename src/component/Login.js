@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {Row, Input,Button,Icon,Col} from 'react-materialize'
+import {Navbar, NavItem} from 'react-materialize'
 import User from '../models/User';
+import nav from './nav';
 class Login extends Component {
   constructor(){
     super();
