@@ -9,6 +9,10 @@ import {
 import Login from './component/Login';
 import Connect from './auth/connect';
 import Nav from './component/Nav';
+<<<<<<< HEAD
+=======
+import Home from './component/Home';
+>>>>>>> homepage_login_navbar
 class App extends Component {
   constructor(){
     super()
