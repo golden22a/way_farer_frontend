@@ -13,11 +13,12 @@ class Login extends Component {
     this.setEmail=this.setEmail.bind(this);
   }
   onLogin(){
-    let user =this.state;
-
-    console.log(user);
-  var s=User.login(user);
-  console.log(s);
+    let user = this.state;
+  User.login(user).then( (res) => {
+    this.props.login(res.data.token,res.data.user);
+  }).catch( (err) => {
+    console.log(err);
+  });
   }
    setEmail (ev){
     this.setState({
