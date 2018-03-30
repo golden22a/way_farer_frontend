@@ -14,28 +14,34 @@ import Nav from './component/Nav';
 import Home from './component/Home';
 >>>>>>> homepage_login_navbar
 class App extends Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props);
     this.state={
-      connect:false,
+      connected:false,
+      token:'',
       user:{}
     }
     this.login=this.login.bind(this);
   }
   componentWillMount(){
+    if(!this.state.connected){
+      console.log('calling');
     let token=localStorage.getItem('token');
     Connect.islogged(token).then((res)=>{
       this.setState({
         connected:true,
-        user:res.data.user
+        user:res.data.user,
+        token:res.data.token
       })
     }).catch( (err) => {
       console.log(err);
     })
   }
+  }
   login(token,user){
     this.setState({
       connected:true,
+      token:token,
       user:user
     });
     localStorage.setItem('token', token);
@@ -43,12 +49,16 @@ class App extends Component {
 
   }
   render() {
-    let logged = !this.state.connected ? < Login  login={this.login}/> : null ;
     return (
       <div className='main'>
       <Nav connected={this.state.connected} user={this.state.user}/>
       <div className="container">
-      {logged}
+
+      <Switch>
+        <Route path="/login" render={(props) => <Login {...props} login={this.login} connected={this.state.connected}/>} />
+
+      </Switch>
+
       </div>
       </div>
     );
