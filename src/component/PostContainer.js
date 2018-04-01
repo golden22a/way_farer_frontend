@@ -26,7 +26,7 @@ class PostContainer extends Component {
       })
     }else if(this.state.city){
 
-      PostModel.cityPost(this.state.token,this.state.city).then((res) =>{
+      PostModel.cityPost(this.state.token,this.props.city).then((res) =>{
         this.setState({
           posts:res.data.posts,
           length:res.data.posts.length
@@ -34,9 +34,10 @@ class PostContainer extends Component {
       });
     }
     }
-    getCity(){
-      PostModel.cityPost(this.state.token,this.props.city).then((res) =>{
+    getCity(id){
+      PostModel.cityPost(this.state.token,id).then((res) =>{
         this.setState({
+          city:id,
           posts:res.data.posts,
           length:res.data.posts.length
         })
@@ -45,8 +46,8 @@ class PostContainer extends Component {
   }
 
     render(){
-
-      this.props.city ? this.getCity() : null;
+      this.props.city != this.state.city ?
+        this.getCity(this.props.city) : null;
       let posts=this.state.posts.map((post,index) => {
         return (<Post post={post} key={index+1} />)
       }
