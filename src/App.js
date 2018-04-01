@@ -12,7 +12,7 @@ import Nav from './component/Nav';
 import CitiesList from './component/CitiesList';
 import PostContainer from './component/PostContainer';
 import {Row,Col} from 'react-materialize';
-
+import Home from './component/Home';
 
 class App extends Component {
   constructor(props){
@@ -71,8 +71,8 @@ class App extends Component {
     console.log(citieslist);
     return (
       <div className='main'>
-      <Nav connected={this.state.connected} user={this.state.user} logout={this.logout} login={this.login}/>
-
+      <Nav connected={this.state.connected} user={this.state.user} logout={this.logout} login={this.login}  />
+      <Home />
       <div className="container">
 
       <Switch>
