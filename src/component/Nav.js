@@ -1,30 +1,47 @@
 import React, { Component } from 'react';
-import {Navbar, NavItem} from 'react-materialize';
-
-//active nav Link:
-//https://learn.tylermcginnis.com/courses/50507/lectures/2466777
-
+import {Navbar, NavItem,Modal,Button} from 'react-materialize';
+import Login from './Login';
+import './nav.css';
 class Nav extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      connected:this.props.connected
+    }
+    this.logout=this.logout.bind(this);
+
+  }
+  logout(props){
+    this.props.logout();
+  }
   render() {
   let el= !this.props.connected ? (<ul>
     <li>
-      <NavItem href="/login">Sign In</NavItem>
+      <NavItem><Modal
+      header={'login'}
+      trigger={<Button>login</Button>}>
+      <Login login={this.props.login} />
+    </Modal></NavItem>
     </li>
     <li>
-      <NavItem href="/signup">Sign Up</NavItem>
+      <NavItem class="sign-up" href="/signup">Sign Up</NavItem>
     </li>
   </ul>) : (<ul>
     <li>
-      <NavItem  href="/profile">{this.props.user.firstname} </NavItem>
+      <NavItem  href="/profile">{this.props.user.firstname+' '+this.props.user.lastname} </NavItem>
     </li>
     <li>
       <NavItem href="/posts">Posts</NavItem>
     </li>
+    <li>
+      <NavItem  onClick={this.logout}>logout</NavItem>
+    </li>
   </ul>)
     return (
-<Navbar class="nav" brand='logo' right>
+<Navbar href='/profile' className="nav" brand={this.props.connected ? <img src={ this.props.user.img ? this.props.user.img :'https://thevoicefinder.com/wp-content/themes/the-voice-finder/images/default-img.png'} className='navlogo'/> : 'lool' } right>
   {el}
 </Navbar>
+
 )}
 }
 

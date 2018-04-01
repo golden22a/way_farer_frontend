@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Row, Input,Button,Icon,Col} from 'react-materialize'
+import {Row, Input,Button,Icon,Col} from 'react-materialize';
 import User from '../models/User';
 class Login extends Component {
   constructor(props){
@@ -40,6 +40,7 @@ class Login extends Component {
 
   render() {
     if(this.props.connected){
+
       this.props.history.push('/');
     }
     return (
@@ -48,7 +49,7 @@ class Login extends Component {
 
       <Input type="email" label="Email" s={12} vale={this.state.email} onChange={this.setEmail} />
       <Input type="password" label="password" s={12} vale={this.state.password} onChange={this.setPassword}/>
-      <Col s={12} offset='s5' >
+      <Col s={12} offset='s5'  >
       <Button waves='light' onClick={this.onLogin}>Login<Icon left>send</Icon></Button>
       </Col>
       </Row>
