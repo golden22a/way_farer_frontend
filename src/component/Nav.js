@@ -17,7 +17,7 @@ class Nav extends Component {
   render() {
   let el= !this.props.connected ? (<ul>
     <li>
-      <NavItem><Modal
+      <NavItem><Modal id='loginModal'
       header={'login'}
       trigger={<Button>login</Button>}>
       <Login login={this.props.login} />
@@ -38,7 +38,7 @@ class Nav extends Component {
     </li>
   </ul>)
     return (
-<Navbar href='/profile' className="nav" brand={this.props.connected ? <img src={ this.props.user.img ? this.props.user.img :'https://thevoicefinder.com/wp-content/themes/the-voice-finder/images/default-img.png'} className='navlogo'/> : 'lool' } right>
+<Navbar fixed={true} href='/profile' className="nav" brand={this.props.connected ? <img src={ this.props.user.img ? this.props.user.img :'https://thevoicefinder.com/wp-content/themes/the-voice-finder/images/default-img.png'} className='navlogo'/> : 'lool' } right>
   {el}
 </Navbar>
 
