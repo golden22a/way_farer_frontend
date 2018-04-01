@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Navbar, NavItem,Modal,Button} from 'react-materialize';
 import Login from './Login';
+import './nav.css';
 class Nav extends Component {
   constructor(props){
     super(props);
@@ -23,7 +24,7 @@ class Nav extends Component {
     </Modal></NavItem>
     </li>
     <li>
-      <NavItem href="/signup">Sign Up</NavItem>
+      <NavItem class="sign-up" href="/signup">Sign Up</NavItem>
     </li>
   </ul>) : (<ul>
     <li>
