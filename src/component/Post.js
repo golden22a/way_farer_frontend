@@ -11,7 +11,7 @@ class Post extends Component {
 <Card style={{height:'25vh'}}header={<CardTitle   waves='light'/>}
     title={this.props.post.title}
     >
-    <p>{this.props.post.body.substring(0,150)} ....    <Modal
+    <p>{this.props.post.body.substring(0,300)} ....    <Modal
     header={this.props.post.title}
     trigger={<Button>Read More</Button>}>
     <p>{this.props.post.body}</p>

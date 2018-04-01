@@ -36,6 +36,7 @@ class PostContainer extends Component {
 
         <ul>
   <Pagination items={this.state.length % 3 == 0 ? Math.floor(this.state.length/3) : Math.floor(this.state.length/3)+1 } activePage={1} maxButtons={10}   onSelect={(ev) => {
+    
 this.setState({
   index:ev-1
 })
