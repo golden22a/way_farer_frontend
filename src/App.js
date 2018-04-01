@@ -72,7 +72,7 @@ class App extends Component {
     return (
       <div className='main'>
       <Nav connected={this.state.connected} user={this.state.user} logout={this.logout} login={this.login}  />
-      <Home />
+      
       <div className="container">
 
       <Switch>
