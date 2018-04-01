@@ -24,9 +24,9 @@ class App extends Component {
     this.login=this.login.bind(this);
   }
   componentWillMount(){
-    if(!this.state.connected){
-      console.log('calling');
     let token=localStorage.getItem('token');
+    if(token){
+      console.log('calling');
     Connect.islogged(token).then((res)=>{
       this.setState({
         connected:true,
@@ -34,7 +34,7 @@ class App extends Component {
         token:res.data.token
       })
     }).catch( (err) => {
-      console.log(err);
+      localStorage.removeItem("token");
     })
   }
   }
@@ -49,16 +49,18 @@ class App extends Component {
 
   }
   render() {
+    let citieslist= this.state.connected ?   <CitiesList /> : '';
     return (
       <div className='main'>
       <Nav connected={this.state.connected} user={this.state.user}/>
+
       <div className="container">
 
       <Switch>
         <Route path="/login" render={(props) => <Login {...props} login={this.login} connected={this.state.connected}/>} />
 
       </Switch>
-      <CitiesList />
+      {citieslist}
       </div>
       </div>
     );

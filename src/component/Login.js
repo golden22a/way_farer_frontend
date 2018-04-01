@@ -40,6 +40,7 @@ class Login extends Component {
 
   render() {
     if(this.props.connected){
+
       this.props.history.push('/');
     }
     return (

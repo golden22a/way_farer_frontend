@@ -12,7 +12,7 @@ class Nav extends Component {
     </li>
   </ul>) : (<ul>
     <li>
-      <NavItem  href="/profile">{this.props.user.firstname} </NavItem>
+      <NavItem  href="/profile">{this.props.user.firstname+' '+this.props.user.lastname} </NavItem>
     </li>
     <li>
       <NavItem href="/posts">Posts</NavItem>
@@ -22,6 +22,7 @@ class Nav extends Component {
 <Navbar class="nav" brand='logo' right>
   {el}
 </Navbar>
+
 )}
 }
 

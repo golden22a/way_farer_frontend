@@ -24,21 +24,6 @@ componentWillMount() {
   })
 }
   render() {
-  // let el= !this.props.connected ? (<ul>
-  //   <li>
-  //     <CitiesListItem href="/login">Sign In</CitiesListItem>
-  //   </li>
-  //   <li>
-  //     <CitiesListItem href="/signup">Sign Up</CitiesListItem>
-  //   </li>
-  // </ul>) : (<ul>
-  //   <li>
-  //     <CitiesListItem  href="/profile">{this.props.user.firstname} </CitiesListItem>
-  //   </li>
-  //   <li>
-  //     <CitiesListItem href="/posts">Posts</CitiesListItem>
-  //   </li>
-  // </ul>);
 
   let cities = this.state.cities.map((city, i) => {
             return (
@@ -50,7 +35,9 @@ componentWillMount() {
         })
     return (
     <div className ="cities-list">
+      <ul>
       {cities}
+      </ul>
       </div>
 
     )}
