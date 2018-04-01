@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import {Navbar, NavItem} from 'react-materialize';
+import './nav.css';
 
 class Nav extends Component {
   render() {
   let el= !this.props.connected ? (<ul>
     <li>
-      <NavItem href="/login">Sign In</NavItem>
+      <NavItem class="log-in" href="/login">Log In</NavItem>
     </li>
     <li>
-      <NavItem href="/signup">Sign Up</NavItem>
+      <NavItem class="sign-up" href="/signup">Sign Up</NavItem>
     </li>
   </ul>) : (<ul>
     <li>
