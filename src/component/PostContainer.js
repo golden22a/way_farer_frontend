@@ -40,6 +40,7 @@ class PostContainer extends Component {
           posts:res.data.posts,
           length:res.data.posts.length
         })
+
     })
   }
 
