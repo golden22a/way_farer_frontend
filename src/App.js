@@ -9,8 +9,7 @@ import {
 import Login from './component/Login';
 import Connect from './auth/connect';
 import Nav from './component/Nav';
-import CitiesList from './component/CitiesList';
-import PostContainer from './component/PostContainer';
+import Content from './component/Content';
 import {Row,Col} from 'react-materialize';
 import Home from './component/Home';
 class App extends Component {
@@ -59,13 +58,8 @@ class App extends Component {
     });
   }
   render() {
-    let citieslist= this.state.connected ?  (
-      <Row >
-      <Col m={3} className='city-list' >
-    <CitiesList />
-      </Col>
-      < PostContainer  token={this.state.token}/>
-      </Row>
+    let citieslist= this.state.connected ?  ( <Content token={this.state.token}/>
+
 
     ) : null;
     console.log(citieslist);

@@ -10,7 +10,6 @@ constructor (props) {
       cities:[]
     }
 
-
 }
 
 componentWillMount() {
@@ -32,6 +31,7 @@ componentWillMount() {
               <City
                 city={city}
                 key={index}
+                getCity={this.props.getCity}
                 />
             )
         })

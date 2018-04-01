@@ -9,23 +9,43 @@ class PostContainer extends Component {
     this.state={
       token:this.props.token,
       posts:[],
+      userPosts: this.props.userPosts,
+      city:this.props.city,
       length:0,
       index:0
     };
+    this.getCity=this.getCity.bind(this);
   }
     componentWillMount(){
+      if(this.state.userPosts){
       PostModel.userPost(this.state.token).then((res) =>{
         this.setState({
           posts:res.data.posts,
           length:res.data.posts.length
         })
       })
+    }else if(this.state.city){
 
-
+      PostModel.cityPost(this.state.token,this.state.city).then((res) =>{
+        this.setState({
+          posts:res.data.posts,
+          length:res.data.posts.length
+        })
+      });
     }
+    }
+    getCity(){
+      PostModel.cityPost(this.state.token,this.props.city).then((res) =>{
+        this.setState({
+          posts:res.data.posts,
+          length:res.data.posts.length
+        })
+    })
+  }
 
     render(){
 
+      this.props.city ? this.getCity() : null;
       let posts=this.state.posts.map((post,index) => {
         return (<Post post={post} key={index+1} />)
       }
@@ -36,7 +56,7 @@ class PostContainer extends Component {
 
         <ul>
   <Pagination items={this.state.length % 3 == 0 ? Math.floor(this.state.length/3) : Math.floor(this.state.length/3)+1 } activePage={1} maxButtons={10}   onSelect={(ev) => {
-    
+
 this.setState({
   index:ev-1
 })

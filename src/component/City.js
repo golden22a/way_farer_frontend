@@ -10,7 +10,7 @@ class City extends Component {
         <Col s={12}>
         <li>
 
-    <Card className='blue-grey darken-1' textClassName='white-text' title={this.props.city.name} >
+    <Card onClick={()=>{this.props.getCity(this.props.city._id)}} className='blue-grey darken-1' textClassName='white-text' title={this.props.city.name} >
     </Card>
     </li>
 </Col>
