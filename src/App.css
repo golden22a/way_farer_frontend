@@ -26,6 +26,15 @@
      overflow: auto;
      height: 90vh;
 }
+.navlogo{
+  height:60px;
+  width:60px;
+  border-radius: 100%;
+}
+img.navlogo {
+
+
+}
 
 
 @keyframes App-logo-spin {

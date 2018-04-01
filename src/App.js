@@ -34,7 +34,7 @@ class App extends Component {
         user:res.data.user,
         token:token
       })
-    
+
     }).catch( (err) => {
       localStorage.removeItem("token");
     })
@@ -71,7 +71,7 @@ class App extends Component {
     console.log(citieslist);
     return (
       <div className='main'>
-      <Nav connected={this.state.connected} user={this.state.user} logout={this.logout}/>
+      <Nav connected={this.state.connected} user={this.state.user} logout={this.logout} login={this.login}/>
 
       <div className="container">
 

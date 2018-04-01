@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {Navbar, NavItem} from 'react-materialize';
-
+import {Navbar, NavItem,Modal,Button} from 'react-materialize';
+import Login from './Login';
 class Nav extends Component {
   constructor(props){
     super(props);
@@ -16,7 +16,11 @@ class Nav extends Component {
   render() {
   let el= !this.props.connected ? (<ul>
     <li>
-      <NavItem href="/login">Sign In</NavItem>
+      <NavItem><Modal
+      header={'login'}
+      trigger={<Button>login</Button>}>
+      <Login login={this.props.login} />
+    </Modal></NavItem>
     </li>
     <li>
       <NavItem href="/signup">Sign Up</NavItem>
@@ -33,7 +37,7 @@ class Nav extends Component {
     </li>
   </ul>)
     return (
-<Navbar className="nav" brand='logo' right>
+<Navbar href='/profile' className="nav" brand={this.props.connected ? <img src={ this.props.user.img ? this.props.user.img :'https://thevoicefinder.com/wp-content/themes/the-voice-finder/images/default-img.png'} className='navlogo'/> : 'lool' } right>
   {el}
 </Navbar>
 
