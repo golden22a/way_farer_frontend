@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import City from './City';
 import CityModel from '../models/City';
+import '../CitiesList.css';
 
 class CitiesList extends Component {
 constructor (props) {
@@ -50,6 +51,7 @@ componentWillMount() {
         })
     return (
     <div className ="cities-list">
+      <h1>Cities</h1>
       {cities}
       </div>
 

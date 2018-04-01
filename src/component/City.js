@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-
+import '../CitiesList.css';
 
 class City extends Component {
 
@@ -7,8 +7,12 @@ class City extends Component {
 
       return (
       <li className="city">
-         {this.props.city.name}
-       </li>
+        <div class="card">
+          <img src="https://placehold.it/100x100" />
+         <h4>{this.props.city.name}</h4>
+
+       </div>
+     </li>
       )
   }
 }

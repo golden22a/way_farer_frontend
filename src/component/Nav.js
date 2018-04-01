@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import {Navbar, NavItem} from 'react-materialize';
 
+//active nav Link:
+//https://learn.tylermcginnis.com/courses/50507/lectures/2466777
+
 class Nav extends Component {
   render() {
   let el= !this.props.connected ? (<ul>
