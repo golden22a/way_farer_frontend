@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -21,6 +22,11 @@
 .App-intro {
   font-size: large;
 }
+.city-list{
+     overflow: auto;
+     height: 90vh;
+}
+
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

@@ -2,6 +2,17 @@ import React, { Component } from 'react';
 import {Navbar, NavItem} from 'react-materialize';
 
 class Nav extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      connected:this.props.connected
+    }
+    this.logout=this.logout.bind(this);
+
+  }
+  logout(props){
+    this.props.logout();
+  }
   render() {
   let el= !this.props.connected ? (<ul>
     <li>
@@ -17,9 +28,12 @@ class Nav extends Component {
     <li>
       <NavItem href="/posts">Posts</NavItem>
     </li>
+    <li>
+      <NavItem  onClick={this.logout}>logout</NavItem>
+    </li>
   </ul>)
     return (
-<Navbar class="nav" brand='logo' right>
+<Navbar className="nav" brand='logo' right>
   {el}
 </Navbar>
 

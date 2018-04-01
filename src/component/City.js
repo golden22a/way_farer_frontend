@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Col,Card} from 'react-materialize';
 
 
 class City extends Component {
@@ -6,9 +7,15 @@ class City extends Component {
   render(){
 
       return (
-      <li className="city" key={this.props.key}>
-         {this.props.city.name}
-       </li>
+        <Col s={12}>
+        <li>
+
+    <Card className='blue-grey darken-1' textClassName='white-text' title={this.props.city.name} >
+    </Card>
+    </li>
+</Col>
+
+
       )
   }
 }

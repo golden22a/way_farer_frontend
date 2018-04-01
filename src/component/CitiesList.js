@@ -25,20 +25,21 @@ componentWillMount() {
 }
   render() {
 
-  let cities = this.state.cities.map((city, i) => {
+  let cities = this.state.cities.map( (city,index) => {
+
             return (
               <City
                 city={city}
-                key={i}
+                key={index}
                 />
             )
         })
     return (
-    <div className ="cities-list">
-      <ul>
+
+      <ul >
       {cities}
-      </ul>
-      </div>
+    </ul>
+
 
     )}
 }
