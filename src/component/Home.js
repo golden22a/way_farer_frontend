@@ -20,6 +20,7 @@ class Home extends Component {
   'https://saintpaul.s3.amazonaws.com/CMS/1884/saint-paul-skyline-vsp__large-slideshow.jpg'
 ]} />
 
+
         </Col>
         </Row>
         <div>
@@ -36,8 +37,8 @@ class Home extends Component {
         </Col>
         <Col s={4} >
         <h3>Fun</h3>
-        <p>Fun to use and learn useful tips about your favorite locations.</p>ip
-        </Col>s
+        <p>Fun to use and learn useful tips about your favorite locations.</p>
+        </Col>
         </Row>
       </div>
     );
