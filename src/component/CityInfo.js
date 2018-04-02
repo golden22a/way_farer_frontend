@@ -7,21 +7,18 @@ class CityInfo extends Component {
   constructor(props){
     super(props);
     this.state = {
-      city:this.props.city
+      id:this.props.city,
+      city:''
     }
     this.cityInfo=this.cityInfo.bind(this);
   }
   componentWillMount(){
-    CityModel.city(this.props.city).then((response) =>{
-      console.log("that pupy", response);
-      this.setState({
-        city:response.data.city
-      })
-    })
+    this.cityInfo(this.state.id);
   }
-    cityInfo(){
-      CityModel.city(this.props.city).then((response) =>{
+    cityInfo(id){
+      CityModel.city(id).then((response) =>{
         this.setState({
+          id:id,
           city:response.data.city
         })
       })
@@ -29,12 +26,15 @@ class CityInfo extends Component {
     }
 
   render(){
-    this.props.city ? this.cityInfo() : null ;
+    this.props.city != this.state.id ? this.cityInfo(this.props.city) : null;
+    console.log(this.state.city.img);
       return (
         <Col s={12}>
-        <p>{this.state.city.name}</p>
-         <img src={this.state.city.img} />
-
+        <Col s={6} >
+        <h2>{this.state.city.name}</h2>
+        </Col><Col s={6} >
+         <img className='img-responsive small'src={this.state.city.img} />
+         </Col>
        </Col>
 
 

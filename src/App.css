@@ -24,17 +24,22 @@
 }
 .city-list{
      overflow: auto;
-     height: 90vh;
+     height: 100vh;
 }
+
 .navlogo{
   height:60px;
   width:60px;
   border-radius: 100%;
 }
-img.navlogo {
-
-
+.content{
+  height:100vh;
+  overflow: auto;
 }
+ img.small{
+  height:250px;
+}
+
 
 
 @keyframes App-logo-spin {

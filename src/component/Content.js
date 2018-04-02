@@ -8,8 +8,8 @@ class Content extends Component {
     super(props);
     this.state={
       token:this.props.token,
-      userPosts:true,
-      city:null,
+      userPosts:false,
+      city:this.props.user.city,
 
     }
     this.getCity=this.getCity.bind(this);
@@ -32,7 +32,7 @@ class Content extends Component {
       return (
 
 
-  <Row >
+  <Row  className='content'>
   <Col m={3} className='city-list' >
 <CitiesList getCity={this.getCity} />
   </Col>
