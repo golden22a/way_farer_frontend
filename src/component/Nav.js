@@ -38,7 +38,7 @@ class Nav extends Component {
     </li>
   </ul>)
     return (
-<Navbar href='/profile' className="nav" brand={this.props.connected ? <img src={ this.props.user.img ? this.props.user.img :'https://thevoicefinder.com/wp-content/themes/the-voice-finder/images/default-img.png'} className='navlogo'/> : 'lool' } right>
+<Navbar href='/profile' className="nav" brand={this.props.connected ? <img src={ this.props.user.img ? this.props.user.img :'https://thevoicefinder.com/wp-content/themes/the-voice-finder/images/default-img.png'} className='navlogo'/> : 'Wayfarer' } right>
   {el}
 </Navbar>
 
