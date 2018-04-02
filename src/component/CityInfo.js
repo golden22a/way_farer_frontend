@@ -27,11 +27,14 @@ class CityInfo extends Component {
 
   render(){
     this.props.city != this.state.id ? this.cityInfo(this.props.city) : null;
+    console.log(this.state.city.img);
       return (
         <Col s={12}>
-        <p>{this.state.city.name}</p>
-         <img src={this.state.city.img} />
-
+        <Col s={6} >
+        <h2>{this.state.city.name}</h2>
+        </Col><Col s={6} >
+         <img className='img-responsive small'src={this.state.city.img} />
+         </Col>
        </Col>
 
 

@@ -58,11 +58,10 @@ class App extends Component {
     });
   }
   render() {
-    let citieslist= this.state.connected ?  ( <Content token={this.state.token}/>
+    let content= this.state.connected ?  ( <Content user={this.state.user} token={this.state.token}/>
 
 
     ) : null;
-    console.log(citieslist);
     return (
       <div className='main'>
       <Nav connected={this.state.connected} user={this.state.user} logout={this.logout} login={this.login}  />
@@ -76,7 +75,7 @@ class App extends Component {
 
       </div>
 
-        {citieslist}
+        {content}
 
 
       </div>
