@@ -12,6 +12,7 @@ import Nav from './component/Nav';
 import Content from './component/Content';
 import {Row,Col} from 'react-materialize';
 import Home from './component/Home';
+import Profile from './component/Profile';
 class App extends Component {
   constructor(props){
     super(props);
@@ -70,6 +71,9 @@ class App extends Component {
 
       <Switch>
         <Route path="/login" render={(props) => <Login {...props} login={this.login} connected={this.state.connected}/>} />
+
+      // <Route path="/profile" render={(props) => <Profile {...props} user={this.state.user} />} />
+      <Route path='/profile' user={this.state.user}/>
 
       </Switch>
 
