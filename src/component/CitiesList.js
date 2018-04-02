@@ -7,25 +7,15 @@ class CitiesList extends Component {
 constructor (props) {
     super(props)
     this.state={
-      cities:[]
+      cities:this.props.cities
     }
 
 }
 
-componentWillMount() {
-  CityModel.all().then((res)=> {
-    this.setState({
-      cities:res.data.cities
-    })
 
-  })
-  .catch( (err) => {
-    console.log(err);
-  })
-}
   render() {
 
-  let cities = this.state.cities.map( (city,index) => {
+  let cities = this.props.cities.map( (city,index) => {
 
             return (
               <City
