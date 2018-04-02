@@ -10,7 +10,7 @@
       return (
         <div className='container'>
         <Row>
-        <Col l={14} s={12}>
+        <Col l={12} s={12}>
 
                 <Carousel options={{ fullWidth: true }} images={[
           'https://i.ytimg.com/vi/oi2o2r3Sgc0/maxresdefault.jpg',
