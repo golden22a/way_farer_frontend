@@ -3,6 +3,7 @@ import {Col,Card,Row} from 'react-materialize';
 import CitiesList from './CitiesList';
 import PostContainer from './PostContainer';
 import CityInfo from './CityInfo';
+import CityModel from '../models/City';
 class Content extends Component {
   constructor(props){
     super(props);
@@ -10,13 +11,22 @@ class Content extends Component {
       token:this.props.token,
       userPosts:false,
       city:this.props.user.city,
+      cities:[]
 
     }
     this.getCity=this.getCity.bind(this);
 
   }
-  componentWillUpdate(){
-    console.log('updating');
+  componentWillMount(){
+    CityModel.all().then((res)=> {
+      this.setState({
+        cities:res.data.cities
+      })
+
+    })
+    .catch( (err) => {
+      console.log(err);
+    })
   }
   getCity(city){
     this.setState({
@@ -26,18 +36,16 @@ class Content extends Component {
     console.log(city);
   }
   render(){
-    let info= this.state.city ? <CityInfo city={this.state.city}/>
-  : null ;
-  console.log('this is info',info);
+
       return (
 
 
   <Row  className='content'>
   <Col m={3} className='city-list' >
-<CitiesList getCity={this.getCity} />
+<CitiesList getCity={this.getCity} cities={this.state.cities} />
   </Col>
   <Col m={9}>
-  {info}
+  <CityInfo city={this.state.city} cities={this.state.cities}/>
   < PostContainer  token={this.state.token} userPosts={this.state.userPosts} city={this.state.city}/>
   </Col>
 </Row>
