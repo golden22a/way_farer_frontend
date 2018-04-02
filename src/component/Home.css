@@ -1,0 +1,17 @@
+body {
+  width: 100%;
+}
+
+h4 {
+  margin-left: 16em;
+  /* position: absolute; */
+}
+
+h3 {
+  margin-left: 2.7em;
+}
+
+p {
+  width: 70%;
+  margin-left: 8em;
+}

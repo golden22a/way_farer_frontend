@@ -59,13 +59,11 @@ class App extends Component {
   }
   render() {
     let content= this.state.connected ?  ( <Content user={this.state.user} token={this.state.token}/>
-
-
-    ) : null;
+    ) : <Home />;
     return (
       <div className='main'>
       <Nav connected={this.state.connected} user={this.state.user} logout={this.logout} login={this.login}  />
-
+      
       <div className="container">
 
       <Switch>

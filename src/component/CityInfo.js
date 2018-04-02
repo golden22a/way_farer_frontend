@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import {Col,Card} from 'react-materialize';
+import {Col,Card,Button,Modal} from 'react-materialize';
 import CityModel from '../models/City';
-
+import PostForm from './PostForm';
 
 class CityInfo extends Component {
   constructor(props){
@@ -34,6 +34,14 @@ class CityInfo extends Component {
         <h2>{this.state.city.name}</h2>
         </Col><Col s={6} >
          <img className='img-responsive small'src={this.state.city.img} />
+         </Col>
+         <Col s={8}>
+         <Modal
+  header='Post'
+  trigger={         <Button floating large className='red right' waves='light' icon='add' />
+}>
+<PostForm city={this.state.id} cities={this.props.cities}/>
+</Modal>
          </Col>
        </Col>
 
