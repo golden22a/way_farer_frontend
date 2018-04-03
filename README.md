@@ -24,28 +24,32 @@ Halim: Using React.
 
 Home.js
 
-![image of code, Homejs](screenshots/Homejs.png "Home")<br>
+![image of code, Homejs](screenshots/Homejs.png "Home")
 
 Login.js
         
 ![image of code, Loginjs](screenshots/Loginjs.png "Login")
 
 Nav.js
-        
+
 ![image of code, Navjs](screenshots/Navjs.png "Nav")
 
 City.js
         
 ![image of code, Cityjs](screenshots/Cityjs.png "City")
 
-Cityinfo.js
-        
-![image of code, Cityinfojs](screenshots/Cityinfojs.png "City Info")
+Home.js
 
-PostModel.js
-        
-![image of code, PostModeljs](screenshots/PostModel.png "Post Model")
+![image of code, Homejs](screenshots/Homejs.png "Home")<br>
 
-UserModel.js
+Login.js
         
-![image of code, UserModeljs](screenshots/UserModel.png "User Model")
+![image of code, Loginjs](screenshots/Loginjs.png "Login")
+
+Home.js
+
+![image of code, Homejs](screenshots/Homejs.png "Home")<br>
+
+Login.js
+        
+![image of code, Loginjs](screenshots/Loginjs.png "Login")
