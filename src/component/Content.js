@@ -4,6 +4,8 @@ import CitiesList from './CitiesList';
 import PostContainer from './PostContainer';
 import CityInfo from './CityInfo';
 import CityModel from '../models/City';
+import PostModel from '../models/Post';
+
 class Content extends Component {
   constructor(props){
     super(props);
@@ -15,7 +17,7 @@ class Content extends Component {
 
     }
     this.getCity=this.getCity.bind(this);
-
+    this.postPost=this.postPost.bind(this);
   }
   componentWillMount(){
     CityModel.all().then((res)=> {
@@ -25,7 +27,7 @@ class Content extends Component {
 
     })
     .catch( (err) => {
-      console.log(err);
+      console.log(err.response.data);
     })
   }
   getCity(city){
@@ -34,6 +36,15 @@ class Content extends Component {
       city:city
     })
     console.log(city);
+  }
+  postPost(post){
+    PostModel.postPost(this.props.token,post).then((res)=>{
+    this.setState({
+      city:post.city
+    })
+    }).catch((error) => {
+      console.log(error);
+    })
   }
   render(){
 
@@ -45,7 +56,7 @@ class Content extends Component {
 <CitiesList getCity={this.getCity} cities={this.state.cities} />
   </Col>
   <Col m={9}>
-  <CityInfo city={this.state.city} cities={this.state.cities}/>
+  <CityInfo postPost={this.postPost} city={this.state.city} cities={this.state.cities}/>
   < PostContainer  token={this.state.token} userPosts={this.state.userPosts} city={this.state.city}/>
   </Col>
 </Row>

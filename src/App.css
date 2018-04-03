@@ -43,6 +43,9 @@
 button.right{
   margin-top:1em;
 }
+.modal-content h4{
+  left:0;
+}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

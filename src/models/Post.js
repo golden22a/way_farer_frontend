@@ -37,6 +37,23 @@ class PostModel{
     return req;
 
   }
+  static postPost(token,post){
+    console.log(post);
+    let req = axios({
+    method: 'post',
+    url: `http://localhost:3000/api/post`,
+    headers:{
+      'token':token
+    },data:{
+      title:post.title,
+      body:post.body,
+      city:post.city
+    }
+
+
+ });
+    return req;
+  }
 
 }
 export default PostModel

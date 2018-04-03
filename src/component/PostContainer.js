@@ -54,7 +54,7 @@ class PostContainer extends Component {
     )
     let display=posts.slice(this.state.index*2,this.state.index*2+2);
       return (
-        < Col m={8} >
+        < Col m={8}  >
 
         <ul>
   <Pagination items={this.state.length % 2 == 0 ? Math.floor(this.state.length/2) : Math.floor(this.state.length/2)+1 } activePage={1} maxButtons={10}   onSelect={(ev) => {

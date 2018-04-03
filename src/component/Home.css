@@ -2,8 +2,8 @@ body {
   width: 100%;
 }
 
-h4 {
-  margin-left: 16em;
+#title {
+  text-align:  center;
   /* position: absolute; */
 }
 
