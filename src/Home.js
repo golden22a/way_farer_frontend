@@ -4,7 +4,7 @@ import './style.css';
 
 import Navbar from '../nav';
 
-class Main extends Component {
+class Home extends Component {
   render() {
     return (
       <div>
@@ -23,4 +23,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default Home;

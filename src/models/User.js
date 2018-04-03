@@ -6,5 +6,9 @@ class User {
   return request;
 
 }
+static signup(user){
+  let request = axios.post("http://localhost:3000/auth/signup",user);
+  return request;
+}
 }
 export default User

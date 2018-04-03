@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {Navbar, NavItem,Modal,Button} from 'react-materialize';
 import Login from './Login';
+import Signup from './Signup';
+import './nav.css';
 class Nav extends Component {
   constructor(props){
     super(props);
@@ -16,28 +18,32 @@ class Nav extends Component {
   render() {
   let el= !this.props.connected ? (<ul>
     <li>
-      <NavItem><Modal
+      <NavItem><Modal id='loginModal'
       header={'login'}
       trigger={<Button>login</Button>}>
       <Login login={this.props.login} />
     </Modal></NavItem>
     </li>
     <li>
-      <NavItem href="/signup">Sign Up</NavItem>
+      <NavItem><Modal id='signupModal'
+      header={'signup'}
+      trigger={<Button>signup</Button>}>
+      <Signup signup={this.props.signup} />
+    </Modal></NavItem>
     </li>
   </ul>) : (<ul>
     <li>
-      <NavItem  href="/profile">{this.props.user.firstname+' '+this.props.user.lastname} </NavItem>
+      <NavItem  href="/user/posts">{this.props.user.firstname+' '+this.props.user.lastname} </NavItem>
     </li>
     <li>
-      <NavItem href="/posts">Posts</NavItem>
+      <NavItem href="/">Posts</NavItem>
     </li>
     <li>
       <NavItem  onClick={this.logout}>logout</NavItem>
     </li>
   </ul>)
     return (
-<Navbar href='/profile' className="nav" brand={this.props.connected ? <img src={ this.props.user.img ? this.props.user.img :'https://thevoicefinder.com/wp-content/themes/the-voice-finder/images/default-img.png'} className='navlogo'/> : 'lool' } right>
+<Navbar fixed={true} href='/profile' className="nav" brand={this.props.connected ? <img src={ this.props.user.img ? this.props.user.img :'https://thevoicefinder.com/wp-content/themes/the-voice-finder/images/default-img.png'} className='navlogo'/> : 'lool' } right>
   {el}
 </Navbar>
 
