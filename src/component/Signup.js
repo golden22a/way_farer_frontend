@@ -33,11 +33,13 @@ class Signup extends Component {
            city: this.refs.city.state.value  || this.refs.city.props.children[0].props.value,
        };
          User.signup(formData).then((res) => {
+            $('.modal-overlay').remove(); 
          this.props.signup(res.data.token,res.data.user);
+
        }).catch((err) => {
          console.log(err);
        })
-       $('.modal-overlay').remove();
+
    }
 
 
