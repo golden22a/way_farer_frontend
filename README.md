@@ -24,14 +24,14 @@ Lamberto: Connecting the frontend to the backend.
  
 Home.js
 
-class Home extends Component {
+<class Home extends Component {
     render() {
       return (
         <div className='container'>
         <Row>
         <Col l={12} s={12}>
 
-                <Carousel options={{ fullWidth: true }} images={[
+                '<Carousel options={{ fullWidth: true }} images={[
           'https://i.ytimg.com/vi/oi2o2r3Sgc0/maxresdefault.jpg',
           'https://www.telegraph.co.uk/content/dam/Travel/Destinations/North%20America/USA/California/los%20angeles/Los%20Angeles%20lead-xlarge.jpg',
           'https://media.apts247.info/5b/5bb81c29ec194f37bc66234964c56082/amenity_lists/community-amenities.jpg',
@@ -40,7 +40,7 @@ class Home extends Component {
         ]} />
 
         </Col>
-        </Row>
+        </Row>>
 
 
 Login.js
