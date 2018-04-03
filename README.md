@@ -24,6 +24,9 @@ Lamberto: Connecting the frontend to the backend.
  
 Home.js
 
+![image of code, "Home JS"]
+(images/homejs.png "Home JS")
+
 <class Home extends Component {
     render() {
       return (
