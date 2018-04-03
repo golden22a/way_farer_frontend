@@ -24,10 +24,12 @@ Lamberto: Connecting the frontend to the backend.<br>
 <br> 
 Home.js
 
+## Code Snippets
+
 ![image of code, Homejs]<br>
-(screenshots/Homejs.png)<br>
+(screenshots/Homejs.png "Home")<br>
 
 Login.js
         
 ![image of code, Loginjs]<br>
-(screenshots/Loginjs.png)
+(screenshots/Loginjs.png "Login")
