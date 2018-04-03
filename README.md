@@ -18,16 +18,16 @@ Halim: Getting Wayfarer to work.
 
 ## Biggest challenge
 
-Felix: Understanding React.
-Juan: Passing state as callbacks.
-Lamberto: Connecting the frontend to the backend.
- 
+Felix: Understanding React.<br>
+Juan: Passing state as callbacks.<br>
+Lamberto: Connecting the frontend to the backend.<br>
+<br> 
 Home.js
 
-![image of code, Homejs]
-(screenshots/Homejs.png "Homejs")
+![image of code, Homejs]<br>
+(way_farer_frontend/screenshots/Homejs.png)<br>
 
 Login.js
         
-![image of code, Loginjs]
-(screenshots/Loginjs.png "Loginjs")
+![image of code, Loginjs]<br>
+(way_farer_frontend/screenshots/Loginjs.png)
