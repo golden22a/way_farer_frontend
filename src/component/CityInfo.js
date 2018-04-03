@@ -27,7 +27,7 @@ class CityInfo extends Component {
 
   render(){
     this.props.city != this.state.id ? this.cityInfo(this.props.city) : null;
-    console.log(this.state.city.img);
+    
       return (
         <Col s={12}>
         <Col s={6} >
