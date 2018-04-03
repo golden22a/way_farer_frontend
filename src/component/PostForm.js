@@ -6,8 +6,9 @@ class PostForm extends Component {
     super(props);
     let title= this.props.post ? this.props.post.title : '';
     let body=this.props.post ? this.props.post.body : '';
-
+    let id=this.props.post ? this.props.post._id : '';
     this.state={
+      _id:id,
       title:title,
       body:body,
       city:this.props.city,
@@ -43,6 +44,8 @@ console.log(this.state);
   }
     else {
       this.props.updatePost(this.state,this.props.post._id);
+
+
     }
   }
 
