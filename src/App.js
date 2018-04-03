@@ -72,12 +72,9 @@ class App extends Component {
 
       <Switch>
         <Route path="/login" render={(props) => <Login {...props} login={this.login} connected={this.state.connected}/>} />
-<<<<<<< HEAD
 
        <Route path="/signup" render={(props) => <Signup {...props} signup={this.signup} connected={this.state.connected}/>} />
 
-=======
->>>>>>> homepage_login_navbar
       </Switch>
 
       </div>
