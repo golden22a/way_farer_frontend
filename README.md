@@ -25,9 +25,9 @@ Lamberto: Connecting the frontend to the backend.<br>
 Home.js
 
 ![image of code, Homejs]<br>
-(way_farer_frontend/screenshots/Homejs.png)<br>
+(screenshots/Homejs.png)<br>
 
 Login.js
         
 ![image of code, Loginjs]<br>
-(way_farer_frontend/screenshots/Loginjs.png)
+(screenshots/Loginjs.png)
