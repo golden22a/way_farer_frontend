@@ -57,9 +57,8 @@ class Content extends Component {
     }
     updatePost(post,id){
       PostModel.postUpdate(this.props.token,post,id).then((res)=>{
-      this.setState({
-        city:post.city
-      })
+        window.location.reload();
+
       }).catch((error) => {
         console.log(error);
       })
