@@ -7,11 +7,15 @@ import {
     Switch
 } from 'react-router-dom';
 import Login from './component/Login';
+import Signup from './component/Signup';
 import Connect from './auth/connect';
 import Nav from './component/Nav';
 import Content from './component/Content';
 import {Row,Col} from 'react-materialize';
 import Home from './component/Home';
+import Profile from './component/Profile';
+
+
 class App extends Component {
   constructor(props){
     super(props);
@@ -68,7 +72,12 @@ class App extends Component {
 
       <Switch>
         <Route path="/login" render={(props) => <Login {...props} login={this.login} connected={this.state.connected}/>} />
+<<<<<<< HEAD
 
+       <Route path="/signup" render={(props) => <Signup {...props} signup={this.signup} connected={this.state.connected}/>} />
+
+=======
+>>>>>>> homepage_login_navbar
       </Switch>
 
       </div>
