@@ -33,10 +33,10 @@ class Nav extends Component {
     </li>
   </ul>) : (<ul>
     <li>
-      <NavItem  href="/profile">{this.props.user.firstname+' '+this.props.user.lastname} </NavItem>
+      <NavItem  href="/user/posts">{this.props.user.firstname+' '+this.props.user.lastname} </NavItem>
     </li>
     <li>
-      <NavItem href="/posts">Posts</NavItem>
+      <NavItem href="/">Posts</NavItem>
     </li>
     <li>
       <NavItem  onClick={this.logout}>logout</NavItem>

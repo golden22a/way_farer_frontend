@@ -4,14 +4,15 @@ import './index.js';
 import {
     Route,
     Link,
-    Switch
+    Switch,
+    Redirect
 } from 'react-router-dom';
 import Login from './component/Login';
 import Signup from './component/Signup';
 import Connect from './auth/connect';
 import Nav from './component/Nav';
 import Content from './component/Content';
-import {Row,Col} from 'react-materialize';
+import {Row,Col, Modal} from 'react-materialize';
 import Home from './component/Home';
 import Profile from './component/Profile';
 
@@ -25,6 +26,7 @@ class App extends Component {
       user:{}
     }
     this.login=this.login.bind(this);
+    this.signup=this.signup.bind(this);
   }
   componentWillMount(){
     let token=localStorage.getItem('token');
@@ -61,25 +63,46 @@ class App extends Component {
       user:{}
     });
   }
+  signup(token,user){
+    this.setState({
+      connected:true,
+      token:token,
+      user:user
+    });
+
+    localStorage.setItem('token', token);
+      console.log(this.state.token);
+  }
   render() {
     let content= this.state.connected ?  ( <Content user={this.state.user} token={this.state.token}/>
-    ) : <Home />;
+
+
+    ) :  <Home />;
     return (
       <div className='main'>
-      <Nav connected={this.state.connected} user={this.state.user} logout={this.logout} login={this.login}  />
+      <Nav connected={this.state.connected} user={this.state.user} logout={this.logout} login={this.login}  signup={this.signup}/>
 
       <div className="container">
 
       <Switch>
+<<<<<<< HEAD
         <Route path="/login" render={(props) => <Login {...props} login={this.login} connected={this.state.connected}/>} />
+=======
+      <Route path="/profile" render={(props) => this.state.connected ? <Profile {...props} user={this.state.user} /> : <Home /> } />
+      <Route path="/user/posts" render={(props) => this.state.connected ?  <Content {...props} user={this.state.user} token={this.state.token} userPosts={true}  /> : <Home/>} />
+        <Route path='/' render={(props) => this.state.connected ?  (
+            <Content {...props} user={this.state.user} token={this.state.token} />
+            ) :
+            <Home /> }  />
+        <Route path='/*' render={() =>   <Redirect to="/"/>} />
+>>>>>>> 4c02b8be66554732239375dcac828a14e63f6875
 
-       <Route path="/signup" render={(props) => <Signup {...props} signup={this.signup} connected={this.state.connected}/>} />
 
       </Switch>
 
       </div>
 
-        {content}
+
 
 
       </div>

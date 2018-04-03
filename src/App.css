@@ -43,6 +43,16 @@
 button.right{
   margin-top:1em;
 }
+.modal-content h4{
+  left:0;
+}
+#posts .card-content{
+  height:30vh;
+}
+#posts button{
+  float:left;
+  margin-bottom: 1em;
+}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

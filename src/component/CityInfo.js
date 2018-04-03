@@ -27,7 +27,7 @@ class CityInfo extends Component {
 
   render(){
     this.props.city != this.state.id ? this.cityInfo(this.props.city) : null;
-    console.log(this.state.city.img);
+    
       return (
         <Col s={12}>
         <Col s={6} >
@@ -40,7 +40,7 @@ class CityInfo extends Component {
   header='Post'
   trigger={         <Button floating large className='red right' waves='light' icon='add' />
 }>
-<PostForm city={this.state.id} cities={this.props.cities}/>
+<PostForm update={false} postPost={this.props.postPost} city={this.state.id} cities={this.props.cities}/>
 </Modal>
          </Col>
        </Col>
