@@ -85,7 +85,7 @@ class App extends Component {
       <div className="container">
 
       <Switch>
-        <Route path="/profile" render={(props) => <Profile {...props} user={this.state.user} />} />
+      <Route path="/profile" render={(props) => this.state.connected ? <Profile {...props} user={this.state.user} /> : <Home /> } />
         <Route path='/' render={(props) => this.state.connected ?  (
             <Content {...props} user={this.state.user} token={this.state.token} />
             ) :

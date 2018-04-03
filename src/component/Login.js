@@ -32,11 +32,13 @@ class Login extends Component {
     this.setState({
       connected:true
     })
+    $('.modal-overlay').remove();
+
     this.props.login(res.data.token,res.data.user);
+
   }).catch( (err) => {
     console.log(err);
   });
-  $('.modal-overlay').remove();
   }
 
   setEmail (ev){

@@ -5,6 +5,7 @@ import PostContainer from './PostContainer';
 import CityInfo from './CityInfo';
 import CityModel from '../models/City';
 import PostModel from '../models/Post';
+import $ from 'jquery';
 
 class Content extends Component {
   constructor(props){
@@ -44,12 +45,14 @@ class Content extends Component {
     this.setState({
       city:post.city
     })
+    $('.modal-overlay').remove();
     }).catch((error) => {
       console.log(error);
     })
   }
   deletePost(post){
     PostModel.deletePost(this.props.token,post._id).then((res)=>{
+      $('.modal-overlay').remove();
       window.location.reload();
     }).catch((error) => {
       console.log(error);
@@ -57,6 +60,7 @@ class Content extends Component {
     }
     updatePost(post,id){
       PostModel.postUpdate(this.props.token,post,id).then((res)=>{
+        $('.modal-overlay').remove();
         window.location.reload();
 
       }).catch((error) => {
