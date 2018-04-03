@@ -3,12 +3,12 @@ import '../App.css';
 import {Row,Col,Carousel} from 'react-materialize';
 // import '../style.css';
 import './Home.css'
-// import {GoogleApiWrapper}from 'google-maps-react';
-//
-// export class MapContainer extends React.Component {}
-// export default GoogleApiWrapper({
-//   apiKey: AIzaSyDAfwCoggPDi6ucFfluBOo9kpJHoFbaVtM;
-// })(MapContainer)
+import {GoogleApiWrapper}from 'google-maps-react';
+
+export class MapContainer extends React.Component {}
+export default GoogleApiWrapper({
+  apiKey: AIzaSyDAfwCoggPDi6ucFfluBOo9kpJHoFbaVtM;
+})(MapContainer)
 class Home_map extends Component {
   render() {
     return (
@@ -37,4 +37,4 @@ class Home_map extends Component {
   }
 }
 
-// export default Home_user;
+export Home_map;
