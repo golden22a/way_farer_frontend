@@ -22,9 +22,10 @@ Felix: Understanding React.<br>
 Juan: Passing state as callbacks.<br>
 Lamberto: Connecting the frontend to the backend.<br>
 <br> 
-Home.js
 
 ## Code Snippets
+
+Home.js
 
 ![image of code, Homejs](screenshots/Homejs.png "Home")<br>
 
