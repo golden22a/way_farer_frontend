@@ -18,6 +18,8 @@ class Content extends Component {
     }
     this.getCity=this.getCity.bind(this);
     this.postPost=this.postPost.bind(this);
+    this.deletePost=this.deletePost.bind(this);
+    this.updatePost=this.updatePost.bind(this);
   }
   componentWillMount(){
     CityModel.all().then((res)=> {
@@ -46,6 +48,23 @@ class Content extends Component {
       console.log(error);
     })
   }
+  deletePost(post){
+    PostModel.deletePost(this.props.token,post._id).then((res)=>{
+      window.location.reload();
+    }).catch((error) => {
+      console.log(error);
+    })
+    }
+    updatePost(post,id){
+      PostModel.postUpdate(this.props.token,post,id).then((res)=>{
+      this.setState({
+        city:post.city
+      })
+      }).catch((error) => {
+        console.log(error);
+      })
+    }
+
   render(){
 
       return (
@@ -57,7 +76,7 @@ class Content extends Component {
   </Col>
   <Col m={9}>
   <CityInfo postPost={this.postPost} city={this.state.city} cities={this.state.cities}/>
-  < PostContainer  token={this.state.token} userPosts={this.state.userPosts} city={this.state.city}/>
+  < PostContainer cities={this.state.cities} updatePost={this.updatePost} deletePost={this.deletePost} userId={this.props.user._id} token={this.state.token} userPosts={this.state.userPosts} city={this.state.city}/>
   </Col>
 </Row>
 )

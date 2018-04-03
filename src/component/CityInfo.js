@@ -40,7 +40,7 @@ class CityInfo extends Component {
   header='Post'
   trigger={         <Button floating large className='red right' waves='light' icon='add' />
 }>
-<PostForm postPost={this.props.postPost} city={this.state.id} cities={this.props.cities}/>
+<PostForm update={false} postPost={this.props.postPost} city={this.state.id} cities={this.props.cities}/>
 </Modal>
          </Col>
        </Col>
