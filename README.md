@@ -18,47 +18,16 @@ Halim: Getting Wayfarer to work.
 
 ## Biggest challenge
 
-Felix: Understanding React.
-Juan: Passing state as callbacks.
-Lamberto: Connecting the frontend to the backend.
- 
+Felix: Understanding React.<br>
+Juan: Passing state as callbacks.<br>
+Lamberto: Connecting the frontend to the backend.<br>
+<br> 
 Home.js
 
-![image of code, "Home JS"]<br>
-(screenshots/homejs.png "Home JS")
-
-<class Home extends Component {
-    render() {
-      return (
-        <div className='container'>
-        <Row>
-        <Col l={12} s={12}>
-
-                '<Carousel options={{ fullWidth: true }} images={[
-          'https://i.ytimg.com/vi/oi2o2r3Sgc0/maxresdefault.jpg',
-          'https://www.telegraph.co.uk/content/dam/Travel/Destinations/North%20America/USA/California/los%20angeles/Los%20Angeles%20lead-xlarge.jpg',
-          'https://media.apts247.info/5b/5bb81c29ec194f37bc66234964c56082/amenity_lists/community-amenities.jpg',
-          'https://az616578.vo.msecnd.net/files/2016/02/28/635922165286429907739493334_NYC.jpg',
-          'https://saintpaul.s3.amazonaws.com/CMS/1884/saint-paul-skyline-vsp__large-slideshow.jpg'
-        ]} />
-
-        </Col>
-        </Row>>
-
+![image of code, Homejs]<br>
+(way_farer_frontend/screenshots/Homejs.png)<br>
 
 Login.js
         
-class Login extends Component {
-  constructor(props){
-    super(props);
-    this.state={
-      email:'',
-      password:'',
-      connected:this.props.connected
-    };
-    this.onLogin=this.onLogin.bind(this);
-    this.setPassword=this.setPassword.bind(this);
-    this.setEmail=this.setEmail.bind(this);
-    this.showModal = this.showModal.bind(this);
-    this.modId = 'yo';
-  }
+![image of code, Loginjs]<br>
+(way_farer_frontend/screenshots/Loginjs.png)
