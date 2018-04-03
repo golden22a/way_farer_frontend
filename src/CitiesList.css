@@ -1,0 +1,53 @@
+.city {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+
+}
+
+.cities-list {
+  width: 33%;
+  background-color: #777777;
+
+}
+h1 {
+  margin: auto;
+}
+.cities-list:nth-child(3) {
+  background-color: #ef6c4c;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+span,
+img {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+img {
+  vertical-align: middle;
+
+}
+h4{
+  /* display: inline-flex; */
+  margin: auto;
+  display: inline;
+  padding-left: 0.3em;
+  /* overflow: hidden;
+ text-overflow: ellipsis;
+ word-wrap: break-word;
+ display: block;
+ line-height: 1em; /* a */
+ /* max-height: 2em; */
+  /* width: 100%; */
+/* display: flex;
+justify-content: center;
+align-items: center; */
+}
+
+p {
+  /* vertical-align: middle; */
+}

@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -20,6 +21,37 @@
 
 .App-intro {
   font-size: large;
+}
+.city-list{
+     overflow: auto;
+     height: 100vh;
+}
+
+.navlogo{
+  height:60px;
+  width:60px;
+  border-radius: 100%;
+}
+.content{
+  height:100vh;
+  overflow: auto;
+}
+ img.small{
+  height:250px;
+}
+
+button.right{
+  margin-top:1em;
+}
+.modal-content h4{
+  left:0;
+}
+#posts .card-content{
+  height:30vh;
+}
+#posts button{
+  float:left;
+  margin-bottom: 1em;
 }
 
 @keyframes App-logo-spin {
