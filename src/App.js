@@ -25,6 +25,7 @@ class App extends Component {
       user:{}
     }
     this.login=this.login.bind(this);
+    this.signup=this.signup.bind(this);
   }
   componentWillMount(){
     let token=localStorage.getItem('token');
@@ -61,12 +62,22 @@ class App extends Component {
       user:{}
     });
   }
+  signup(token,user){
+    this.setState({
+      connected:true,
+      token:token,
+      user:user
+    });
+
+    localStorage.setItem('token', token);
+      console.log(this.state.token);
+  }
   render() {
     let content= this.state.connected ?  ( <Content user={this.state.user} token={this.state.token}/>
     ) : <Home />;
     return (
       <div className='main'>
-      <Nav connected={this.state.connected} user={this.state.user} logout={this.logout} login={this.login}  />
+      <Nav connected={this.state.connected} user={this.state.user} logout={this.logout} login={this.login}  signup={this.signup}/>
 
       <div className="container">
 
