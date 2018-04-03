@@ -3,7 +3,7 @@ class PostModel{
   static allPost(token){
     let req = axios({
     method: 'GET',
-    url: 'http://localhost:3000/api/posts',
+    url: 'https://calm-sierra-33982.herokuapp.com/api/posts',
     headers:{
       'Content-Type': 'application/x-www-form-urlencoded',
       'token':token
@@ -15,7 +15,7 @@ class PostModel{
   static userPost(token){
     let req = axios({
     method: 'GET',
-    url: 'http://localhost:3000/api/user/posts',
+    url: 'https://calm-sierra-33982.herokuapp.com/api/user/posts',
     headers:{
       'Content-Type': 'application/x-www-form-urlencoded',
       'token':token
@@ -27,7 +27,7 @@ class PostModel{
   static cityPost(token,id){
     let req = axios({
     method: 'GET',
-    url: `http://localhost:3000/api/city/${id}/posts`,
+    url: `https://calm-sierra-33982.herokuapp.com/api/city/${id}/posts`,
     headers:{
       'Content-Type': 'application/x-www-form-urlencoded',
       'token':token
@@ -41,7 +41,7 @@ class PostModel{
     console.log(post);
     let req = axios({
     method: 'post',
-    url: `http://localhost:3000/api/post`,
+    url: `https://calm-sierra-33982.herokuapp.com/api/post`,
     headers:{
       'token':token
     },data:{
@@ -57,7 +57,7 @@ class PostModel{
   static deletePost(token,id){
     let req = axios({
     method: 'delete',
-    url: `http://localhost:3000/api/post/${id}`,
+    url: `https://calm-sierra-33982.herokuapp.com/api/post/${id}`,
     headers:{
       'token':token
     }
@@ -68,7 +68,7 @@ class PostModel{
   static postUpdate(token,post,id){
     let req = axios({
     method: 'put',
-    url: `http://localhost:3000/api/post/${id}`,
+    url: `https://calm-sierra-33982.herokuapp.com/api/post/${id}`,
     headers:{
       'token':token
     },data:{

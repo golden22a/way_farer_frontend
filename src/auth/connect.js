@@ -4,7 +4,7 @@ static islogged(token){
   console.log(token);
   let request = axios({
   method: 'GET',
-  url: 'http://localhost:3000/api/okay',
+  url: 'https://calm-sierra-33982.herokuapp.com/api/okay',
   headers:{
     'Content-Type': 'application/x-www-form-urlencoded',
     'token':token
