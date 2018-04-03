@@ -12,7 +12,7 @@ import Signup from './component/Signup';
 import Connect from './auth/connect';
 import Nav from './component/Nav';
 import Content from './component/Content';
-import {Row,Col} from 'react-materialize';
+import {Row,Col, Modal} from 'react-materialize';
 import Home from './component/Home';
 import Profile from './component/Profile';
 
