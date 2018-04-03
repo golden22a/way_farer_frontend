@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Navbar, NavItem,Modal,Button} from 'react-materialize';
 import Login from './Login';
+import Signup from './Signup';
 import './nav.css';
 class Nav extends Component {
   constructor(props){
@@ -24,7 +25,11 @@ class Nav extends Component {
     </Modal></NavItem>
     </li>
     <li>
-      <NavItem class="sign-up" href="/signup">Sign Up</NavItem>
+      <NavItem><Modal id='signupModal'
+      header={'signup'}
+      trigger={<Button>signup</Button>}>
+      <Signup signup={this.props.signup} />
+    </Modal></NavItem>
     </li>
   </ul>) : (<ul>
     <li>
