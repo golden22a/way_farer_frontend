@@ -1,27 +1,24 @@
 # About
 Frontend portion of Project Wayfarer
 
-## Languages used
+## Approach
 
-ReactJS, HTML5, CSS, Git, Github
+Pair programming.
 
-## Objective
+## What Was Easier Than You Thought?
 
-Build a website to share tips about a location with other travelers.
+Felix: Importing pages.<br>
+Halim: Authentication.
 
-## Biggest wins
+## What Was More Challenging?
 
-Felix: Understanding React enough to make things work.
-Juan: Getting the basics of the profile page to work.
-Lamberto: Helping Juan Carlos with Postman and the backend.
-Halim: Getting Wayfarer to work.
+Felix: Just about everything else.
+<br>
+Halim: Using React.
 
-## Biggest challenge
+## What is a lesson you will carry forward to working on Project 2?
 
-Felix: Understanding React.<br>
-Juan: Passing state as callbacks.<br>
-Lamberto: Connecting the frontend to the backend.<br>
-<br> 
+(Refer to backend README)
 
 ## Code Snippets
 
@@ -32,3 +29,23 @@ Home.js
 Login.js
         
 ![image of code, Loginjs](screenshots/Loginjs.png "Login")
+
+Nav.js
+        
+![image of code, Navjs](screenshots/Navjs.png "Nav")
+
+City.js
+        
+![image of code, Cityjs](screenshots/Cityjs.png "City")
+
+Cityinfo.js
+        
+![image of code, Cityinfojs](screenshots/Cityinfojs.png "City Info")
+
+PostModel.js
+        
+![image of code, PostModeljs](screenshots/PostModel.png "Post Model")
+
+UserModel.js
+        
+![image of code, UserModeljs](screenshots/UserModel.png "User Model")
