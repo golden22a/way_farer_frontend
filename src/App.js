@@ -93,13 +93,6 @@ class App extends Component {
         <Route path='/*' render={() =>   <Redirect to="/"/>} />
 
 
-
-
-
-
-
-
-
       </Switch>
 
       </div>
