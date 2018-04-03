@@ -4,7 +4,8 @@ import './index.js';
 import {
     Route,
     Link,
-    Switch
+    Switch,
+    Redirect
 } from 'react-router-dom';
 import Login from './component/Login';
 import Connect from './auth/connect';
@@ -62,7 +63,7 @@ class App extends Component {
     let content= this.state.connected ?  ( <Content user={this.state.user} token={this.state.token}/>
 
 
-    ) : null;
+    ) :  <Home />;
     return (
       <div className='main'>
       <Nav connected={this.state.connected} user={this.state.user} logout={this.logout} login={this.login}  />
@@ -70,16 +71,23 @@ class App extends Component {
       <div className="container">
 
       <Switch>
-        <Route path="/login" render={(props) => <Login {...props} login={this.login} connected={this.state.connected}/>} />
+        <Route path="/profile" render={(props) => <Profile {...props} user={this.state.user} />} />
+        <Route path='/' render={(props) => this.state.connected ?  (
+            <Content {...props} user={this.state.user} token={this.state.token} />
+            ) :
+            <Home /> }  />
+        <Route path='/*' render={() =>   <Redirect to="/"/>} />
 
-      // <Route path="/profile" render={(props) => <Profile {...props} user={this.state.user} />} />
-      <Route path='/profile' user={this.state.user}/>
+
+
+
+
 
       </Switch>
 
       </div>
 
-        {content}
+
 
 
       </div>
