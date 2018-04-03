@@ -21,47 +21,14 @@ Halim: Getting Wayfarer to work.
 Felix: Understanding React.
 Juan: Passing state as callbacks.
 Lamberto: Connecting the frontend to the backend.
+ 
+Home.js
 
-``` 
-"class Home extends Component {
-    render() {
-      return (
-        <div className='container'>
-        <Row>
-        <Col l={12} s={12}>
+![image of code, Homejs]
+(screenshots/Homejs.png "Homejs")
 
-                <Carousel options={{ fullWidth: true }} images={[
-          'https://i.ytimg.com/vi/oi2o2r3Sgc0/maxresdefault.jpg',
-          'https://www.telegraph.co.uk/content/dam/Travel/Destinations/North%20America/USA/California/los%20angeles/Los%20Angeles%20lead-xlarge.jpg',
-          'https://media.apts247.info/5b/5bb81c29ec194f37bc66234964c56082/amenity_lists/community-amenities.jpg',
-          'https://az616578.vo.msecnd.net/files/2016/02/28/635922165286429907739493334_NYC.jpg',
-          'https://saintpaul.s3.amazonaws.com/CMS/1884/saint-paul-skyline-vsp__large-slideshow.jpg'
-        ]} />
-
-        </Col>
-        </Row>"        
- ```
+Login.js
         
- ``` class Login extends Component {
-  constructor(props){
-    super(props);
-    this.state={
-      email:'',
-      password:'',
-      connected:this.props.connected
-    };
-    this.onLogin=this.onLogin.bind(this);
-    this.setPassword=this.setPassword.bind(this);
-    this.setEmail=this.setEmail.bind(this);
-  }
-  onLogin(){
-    let user = this.state;
-  User.login(user).then( (res) => {
-    this.setState({
-      connected:true
-    })
-    this.props.login(res.data.token,res.data.user);
-  }).catch( (err) => {
-    console.log(err);
-  });
-  } ```
+![image of code, Loginjs]
+(screenshots/Loginjs.png "Loginjs")
+
