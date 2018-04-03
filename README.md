@@ -26,10 +26,8 @@ Home.js
 
 ## Code Snippets
 
-![image of code, Homejs]<br>
-(screenshots/Homejs.png "Home")<br>
+![image of code, Homejs](screenshots/Homejs.png "Home")<br>
 
 Login.js
         
-![image of code, Loginjs]<br>
-(screenshots/Loginjs.png "Login")
+![image of code, Loginjs](screenshots/Loginjs.png "Login")
