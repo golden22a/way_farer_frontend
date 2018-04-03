@@ -22,7 +22,8 @@ Felix: Understanding React.
 Juan: Passing state as callbacks.
 Lamberto: Connecting the frontend to the backend.
 
-``` class Home extends Component {
+``` 
+class Home extends Component {
     render() {
       return (
         <div className='container'>
@@ -38,7 +39,8 @@ Lamberto: Connecting the frontend to the backend.
         ]} />
 
         </Col>
-        </Row>  ```
+        </Row>  
+ ```
         
  ``` class Login extends Component {
   constructor(props){
