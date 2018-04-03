@@ -15,7 +15,11 @@ let userAction=    this.props.userId == this.props.post.user ?
   <PostForm update={true} updatePost={this.props.updatePost} city={this.props.post.city} post={this.props.post} cities={this.props.cities}/>
 
 </Modal>
-<Button onClick={()=>this.props.deletePost(this.props.post)}>Delete</Button>
+<Button onClick={()=>
+  {
+    this.props.deletePost(this.props.post);
+  }
+}>Delete</Button>
 </div>
 
 ): null

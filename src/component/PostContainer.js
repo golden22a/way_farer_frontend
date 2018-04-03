@@ -52,12 +52,13 @@ class PostContainer extends Component {
         return (<Post cities={this.props.cities} updatePost={this.props.updatePost} deletePost={this.props.deletePost} userId={this.props.userId} post={post} key={index+1} />)
       }
     )
-    let display=posts.slice(this.state.index*2,this.state.index*2+2);
+    console.log(this.props.offset);
+    let display=posts.slice(this.state.index*this.props.offset,this.state.index*this.props.offset+this.props.offset);
       return (
         < Col m={8}  id='posts'>
 
         <ul>
-  <Pagination items={this.state.length % 2 == 0 ? Math.floor(this.state.length/2) : Math.floor(this.state.length/2)+1 } activePage={1} maxButtons={10}   onSelect={(ev) => {
+  <Pagination items={this.state.length % this.props.offset == 0 ? Math.floor(this.state.length/this.props.offset) : Math.floor(this.state.length/this.props.offset)+1 } activePage={1} maxButtons={10}   onSelect={(ev) => {
 
 this.setState({
   index:ev-1
