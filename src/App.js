@@ -75,13 +75,9 @@ class App extends Component {
   }
   render() {
     let content= this.state.connected ?  ( <Content user={this.state.user} token={this.state.token}/>
-<<<<<<< HEAD
-    ) : <Home />;
-=======
 
 
     ) :  <Home />;
->>>>>>> profile
     return (
       <div className='main'>
       <Nav connected={this.state.connected} user={this.state.user} logout={this.logout} login={this.login}  signup={this.signup}/>
@@ -100,10 +96,9 @@ class App extends Component {
 
 
 
-<<<<<<< HEAD
-       <Route path="/signup" render={(props) => <Signup {...props} signup={this.signup} connected={this.state.connected}/>} />
-=======
->>>>>>> profile
+
+
+
 
       </Switch>
 

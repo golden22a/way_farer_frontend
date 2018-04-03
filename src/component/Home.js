@@ -25,7 +25,7 @@
 
 
 
-          <div>
+          <div id='title'>
           <h4>Wayfarer is...</h4>
           </div>
           <Row className='articles'>
