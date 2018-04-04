@@ -13,7 +13,7 @@ static signup(user){
 static profileUpdate(token,user){
   let req = axios({
   method: 'put',
-  url: `http://localhost:3000/api/profile/`,
+  url: `https://calm-sierra-33982.herokuapp.com/api/profile/`,
   headers:{
     'token':token
   },data:{
