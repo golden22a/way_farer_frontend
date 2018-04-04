@@ -44,7 +44,9 @@ class Content extends Component {
     this.setState({
       city:post.city
     })
+    $('.modal').removeClass('open');
     $('.modal-overlay').remove();
+    $('.modal').hide();
 
     }).catch((error) => {
       console.log(error);

@@ -53,3 +53,7 @@ PostModel.js
 UserModel.js
         
 ![image of code, UserModel](screenshots/UserModel.png "User Model")
+
+Content.js
+        
+![image of code, Contentjs](screenshots/Contentjs.png "Content")
