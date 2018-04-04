@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import PostModel from '../models/Post';
 import Post from './Post';
 import {Row,Col,Pagination} from 'react-materialize';
+import $ from 'jquery';
+
 class PostContainer extends Component {
   constructor(props){
     super(props);
@@ -15,6 +17,8 @@ class PostContainer extends Component {
       index:0
     };
     this.getCity=this.getCity.bind(this);
+    this.deletePost=this.deletePost.bind(this);
+    this.updatePost=this.updatePost.bind(this);
   }
     componentWillMount(){
       if(this.state.userPosts){
@@ -44,12 +48,50 @@ class PostContainer extends Component {
 
     })
   }
+  deletePost(post){
+    let index=this.state.posts.indexOf(post);
+    PostModel.deletePost(this.props.token,post._id).then((res)=>{
+    let posts=this.state.posts;
+    posts.splice(index,1);
+    this.setState({
+      posts:posts
+    })
+    }).catch((error) => {
+      console.log(error);
+    })
+  }
+  updatePost(post,id){
+    if(this.state.userPosts || this.state.city.toString() == post.city.toString()){
+      console.log('here');
+    let index=this.state.posts.findIndex((a)=>a._id==id);
+    console.log(index);
+      PostModel.postUpdate(this.props.token,post,id).then((res)=>{
+        let posts=this.state.posts;
+        posts[index]=res.data.post;
+        this.setState({
+          posts:posts
+        })
+        $('.modal').removeClass('open');
+        $('.modal').hide();
+        $('.modal-overlay').remove();
+
+
+
+      }).catch((error) => {
+        console.log(error);
+      })
+    }
+    else{
+      console.log('i am here man');
+      this.props.updatePost(post,id);
+    }
+  }
 
     render(){
       this.props.city != this.state.city ?
         this.getCity(this.props.city) : null;
       let posts=this.state.posts.map((post,index) => {
-        return (<Post cities={this.props.cities} updatePost={this.props.updatePost} deletePost={this.props.deletePost} userId={this.props.userId} post={post} key={index+1} />)
+        return (<Post cities={this.props.cities} updatePost={this.updatePost} deletePost={this.deletePost} userId={this.props.userId} post={post} key={index+1} />)
       }
     )
     console.log(this.props.offset);

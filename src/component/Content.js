@@ -18,7 +18,6 @@ class Content extends Component {
     }
     this.getCity=this.getCity.bind(this);
     this.postPost=this.postPost.bind(this);
-    this.deletePost=this.deletePost.bind(this);
     this.updatePost=this.updatePost.bind(this);
   }
   componentWillMount(){
@@ -45,27 +44,23 @@ class Content extends Component {
       city:post.city
     })
     $('.modal').removeClass('open');
-    $('.modal-overlay').remove();
     $('.modal').hide();
+    $('.modal-overlay').remove();
 
     }).catch((error) => {
       console.log(error);
     })
 
   }
-  deletePost(post){
-    PostModel.deletePost(this.props.token,post._id).then((res)=>{
-      window.location.reload();
-    }).catch((error) => {
-      console.log(error);
-    })
-    }
+
     updatePost(post,id){
       PostModel.postUpdate(this.props.token,post,id).then((res)=>{
+        $('.modal').removeClass('open');
         $('.modal').hide();
         $('.modal-overlay').remove();
-        window.location.reload();
-
+        this.setState({
+          city:post.city
+        })
 
 
       }).catch((error) => {
@@ -86,7 +81,7 @@ class Content extends Component {
     </Col>
     <Col m={9}>
     <CityInfo postPost={this.postPost} city={this.state.city} cities={this.state.cities}/>
-    < PostContainer offset={2} cities={this.state.cities} updatePost={this.updatePost} deletePost={this.deletePost} userId={this.props.user._id} token={this.state.token} userPosts={this.state.userPosts} city={this.state.city}/>
+    < PostContainer offset={2} cities={this.state.cities} updatePost={this.updatePost}  userId={this.props.user._id} token={this.state.token} userPosts={this.state.userPosts} city={this.state.city}/>
     </Col>
     </div>
     )
