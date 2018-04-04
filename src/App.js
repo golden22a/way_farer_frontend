@@ -85,7 +85,7 @@ class App extends Component {
 
 
     ) :  <Home />;
-  console.log(this.state.user.city);
+  
     return (
       <div className='main'>
       <Nav connected={this.state.connected} user={this.state.user} logout={this.logout} login={this.login}  signup={this.signup}/>
