@@ -15,6 +15,7 @@ import Content from './component/Content';
 import {Row,Col, Modal} from 'react-materialize';
 import Home from './component/Home';
 import Profile from './component/Profile';
+import UpdateProfile from './component/UpdateProfile';
 
 
 class App extends Component {
@@ -27,6 +28,7 @@ class App extends Component {
     }
     this.login=this.login.bind(this);
     this.signup=this.signup.bind(this);
+    this.updateUser=this.updateUser.bind(this);
   }
   componentWillMount(){
     let token=localStorage.getItem('token');
@@ -73,11 +75,17 @@ class App extends Component {
     localStorage.setItem('token', token);
       console.log(this.state.token);
   }
+  updateUser(user){
+    this.setState({
+      user:user
+    })
+  }
   render() {
     let content= this.state.connected ?  ( <Content user={this.state.user} token={this.state.token}/>
 
 
     ) :  <Home />;
+  
     return (
       <div className='main'>
       <Nav connected={this.state.connected} user={this.state.user} logout={this.logout} login={this.login}  signup={this.signup}/>
@@ -85,7 +93,8 @@ class App extends Component {
       <div className="container">
 
       <Switch>
-      <Route path="/profile" render={(props) => this.state.connected ? <Profile {...props} user={this.state.user} /> : <Home /> } />
+
+      <Route path="/profile" render={(props) => this.state.connected ? <Profile {...props} user={this.state.user} token={this.state.token} city={this.state.user.city} update={this.updateUser}/> : <Home /> } />
       <Route path="/user/posts" render={(props) => this.state.connected ?  <Content {...props} user={this.state.user} token={this.state.token} userPosts={true}  /> : <Home/>} />
         <Route path='/' render={(props) => this.state.connected ?  (
             <Content {...props} user={this.state.user} token={this.state.token} />
