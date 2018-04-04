@@ -16,6 +16,7 @@ class Profile extends Component {
       firstname: this.props.user.firstname,
       lastname: this.props.user.lastname,
       city: this.props.user.city,
+      name:'',
       email:this.props.user.email,
       length:0
     }
@@ -73,7 +74,8 @@ class Profile extends Component {
       CityModel.city(id).then((response) =>{
         this.setState({
           id:id,
-          city:response.data.city
+          city:response.data.city._id,
+          name:response.data.city.name
         })
         // console.log(city);
       }).catch((err)=> console.log('prob with loading city'))
@@ -90,7 +92,7 @@ class Profile extends Component {
             <h5>User Profile</h5>
             <p>Name: {this.props.user.firstname+'     '+this.props.user.lastname}</p>
              <p>Email: {this.props.user.email}</p>
-             <p>City: {this.state.city.name}</p>
+             <p>City: {this.state.name}</p>
              <p>Number of posts: <span className="new badge" data-badge-caption="posts">{this.state.length}</span></p>
 
              <p>Date Joined: {this.props.user.dateJoined}</p>

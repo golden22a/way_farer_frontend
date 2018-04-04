@@ -35,6 +35,7 @@ class UpdateProfile extends Component {
        };
          User.profileUpdate(this.props.token,formData).then((res) => {
             $('.modal-overlay').remove();
+            $('.modal').removeClass('open');
             $('.modal').hide();
             this.props.update(res.data.user);
             console.log(res.data.user);

@@ -85,6 +85,7 @@ class App extends Component {
 
 
     ) :  <Home />;
+  console.log(this.state.user.city);
     return (
       <div className='main'>
       <Nav connected={this.state.connected} user={this.state.user} logout={this.logout} login={this.login}  signup={this.signup}/>
@@ -92,9 +93,8 @@ class App extends Component {
       <div className="container">
 
       <Switch>
-      <Route path="/profile" render={(props) => this.state.connected ? <Profile {...props} user={this.state.user} /> : <Home /> } />
-        <Route path="/profile/update" render={(props) => this.state.connected ? <UpdateProfile {...props} user={this.state.user} token={this.state.token} /> : <Home /> } />
-      <Route path="/profile" render={(props) => this.state.connected ? <Profile {...props} user={this.state.user} token={this.state.token} update={this.updateUser}/> : <Home /> } />
+
+      <Route path="/profile" render={(props) => this.state.connected ? <Profile {...props} user={this.state.user} token={this.state.token} city={this.state.user.city} update={this.updateUser}/> : <Home /> } />
       <Route path="/user/posts" render={(props) => this.state.connected ?  <Content {...props} user={this.state.user} token={this.state.token} userPosts={true}  /> : <Home/>} />
         <Route path='/' render={(props) => this.state.connected ?  (
             <Content {...props} user={this.state.user} token={this.state.token} />
