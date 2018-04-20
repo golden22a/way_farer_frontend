@@ -21,7 +21,7 @@ class PostModel{
       'token':token
     }
 
-     });
+  });
     return req;
   }
   static cityPost(token,id){
